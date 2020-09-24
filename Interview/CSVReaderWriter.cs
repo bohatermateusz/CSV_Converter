@@ -1,4 +1,4 @@
-﻿using Interview.Interfaces;
+﻿using InterfacesHub;
 
 namespace Interview
 {

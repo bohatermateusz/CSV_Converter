@@ -1,4 +1,4 @@
-﻿namespace Interview.Interfaces
+﻿namespace InterfacesHub
 {
     public interface IWriter
     {

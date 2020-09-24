@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using Interview.Interfaces;
+using InterfacesHub;
 
 namespace Interview
 {
