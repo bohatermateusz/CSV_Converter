@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using Interview.Interfaces;
 
 namespace Interview
 {
-    class CsvReader : IReader
+    public class CsvReader : IReader
     {
-        private readonly object _readerStream;
+        private readonly StreamReader _readerStream;
 
-        public CsvReader(object readerStream)
+        public CsvReader(StreamReader readerStream)
         {
             _readerStream = readerStream;
         }
