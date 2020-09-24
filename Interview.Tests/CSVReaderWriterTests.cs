@@ -37,6 +37,8 @@ namespace Interview.Tests
             string column1 = "dd";
             string column2 = "aa";
 
+            var co = instance.Read();
+
             while (instance.Read())
             {
                 
