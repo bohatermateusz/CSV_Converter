@@ -4,10 +4,10 @@ using System.IO;
 
 namespace Interview
 {
-    public class CSVReaderWriter
+    public class CsvReaderWriter
     {
-        private StreamReader _readerStream = null;
-        private StreamWriter _writerStream = null;
+        private StreamReader _readerStream;
+        private StreamWriter _writerStream;
 
         [Flags]
         public enum Mode { Read = 1, Write = 2 };
@@ -45,79 +45,21 @@ namespace Interview
             WriteLine(outPut);
         }
 
-        public bool Read(string column1, string column2)
+        public bool Read()
         {
-            const int FIRST_COLUMN = 0;
-            const int SECOND_COLUMN = 1;
+            var separator = '\t';
 
-            string line;
-            string[] columns;
-
-            char separator = '\t';
-
-            line = ReadLine();
-            columns = GetColumns(line, separator);
+            var line = ReadLine();
+            var columns = GetColumns(line, separator);
 
             if (columns.Length == 0)
             {
-                column1 = null;
-                column2 = null;
-
-                return false;
-            }
-            else
-            {
-                column1 = columns[FIRST_COLUMN];
-                column2 = columns[SECOND_COLUMN];
-
-                return true;
-            }
-        }
-        
-        public bool Read(out string column1, out string column2)
-        {
-            const int FIRST_COLUMN = 0;
-            const int SECOND_COLUMN = 1;
-
-            string line;
-            string[] columns;
-
-            char separator = '\t';
-
-            line = ReadLine();
-
-            if (line == null)
-            {
-                column1 = null;
-                column2 = null;
+       
 
                 return false;
             }
 
-            columns = GetColumns(line, separator);
-
-            if (columns.Length == 0)
-            {
-                column1 = null;
-                column2 = null;
-
-                return false;
-            } 
-            else
-            {
-                try
-                {
-                    column1 = columns[FIRST_COLUMN];
-                    column2 = columns[SECOND_COLUMN];
-
-                }
-                catch (Exception e)
-                {
-                    throw;
-                }
-
-                return true;
-            }
+            return true;
         }
 
         private void WriteLine(string line)
@@ -131,7 +73,7 @@ namespace Interview
         }
         private string[] GetColumns(string line, char separator)
         {
-            List<string> columns = new List<string>();
+            var columns = new List<string>();
             int index;
             while ((index = line.IndexOf(separator)) > 0)
             {
