@@ -36,10 +36,16 @@ namespace Interview.Tests
             List<(string Column1, string Column2)> columns = new List<(string Column1, string Column2)>();
             string column1 = "dd";
             string column2 = "aa";
-            //while (readerWriter.Read(column1, column2))
-            //{
-            //    columns.Add((column1, column2));
-            //}
+
+            while (instance.Read())
+            {
+                
+            }
+
+            while (readerWriter.Read(column1, column2))
+            {
+                columns.Add((column1, column2));
+            }
 
             Assert.That(columns.Count, Is.EqualTo(1000));
 
