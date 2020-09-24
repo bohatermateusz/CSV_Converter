@@ -1,5 +1,4 @@
-﻿using System.IO;
-using Interview.Interfaces;
+﻿using Interview.Interfaces;
 
 namespace Interview
 {
