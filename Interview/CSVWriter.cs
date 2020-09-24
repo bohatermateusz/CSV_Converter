@@ -3,11 +3,11 @@ using Interview.Interfaces;
 
 namespace Interview
 {
-    public class CsvWriter : IWriter
+    internal class CsvWriter : IWriter
     {
         private readonly StreamWriter _writerStream;
 
-        public CsvWriter(StreamWriter writerStream)
+        internal CsvWriter(StreamWriter writerStream)
         {
             _writerStream = writerStream;
         }

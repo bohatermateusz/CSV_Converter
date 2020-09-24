@@ -10,6 +10,7 @@ namespace ClientApp
         {
             CsvMain csv = new CsvMain("s");
             csv.Read();
+            csv.Write();
         }
     }
 }

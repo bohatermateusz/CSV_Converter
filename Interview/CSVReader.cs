@@ -4,11 +4,11 @@ using Interview.Interfaces;
 
 namespace Interview
 {
-    public class CsvReader : IReader
+    internal class CsvReader : IReader
     {
         private readonly StreamReader _readerStream;
 
-        public CsvReader(StreamReader readerStream)
+        internal CsvReader(StreamReader readerStream)
         {
             _readerStream = readerStream;
         }
