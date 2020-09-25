@@ -18,7 +18,9 @@ namespace Interview
             const char separator = '\t';
 
             var line = ReadLine();
-            var columns = GetColumns(line, separator);
+
+            if (line == null) return false;
+            var columns = GetColumns(separator, line);
 
             if (columns.Length == 0)
             {
@@ -26,13 +28,14 @@ namespace Interview
             }
 
             return true;
+
         }
 
         private string ReadLine()
         {
             return _readerStream.ReadLine();
         }
-        private static string[] GetColumns(string line, char separator)
+        private static string[] GetColumns(char separator, string line = "")
         {
             var columns = new List<string>();
             int index;

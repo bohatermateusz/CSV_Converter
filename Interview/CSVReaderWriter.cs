@@ -15,9 +15,9 @@ namespace Interview
         {
             _writer.Write();
         }
-        internal void Read()
+        internal bool Read()
         {
-            _reader.Read();
+            return _reader.Read();
         }
     }
     

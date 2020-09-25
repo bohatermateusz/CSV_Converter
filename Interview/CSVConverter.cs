@@ -15,11 +15,11 @@ namespace Interview
         }
         public void Write()
         {
-            _instance.Write();
+           _instance.Write();
         }
-        public void Read()
+        public bool Read()
         {
-            _instance.Read();
+            return _instance.Read();
         }
     }
 }
