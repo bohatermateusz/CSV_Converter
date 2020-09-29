@@ -1,6 +1,7 @@
 using System.IO;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Interview.Tests
 {
@@ -25,18 +26,21 @@ namespace Interview.Tests
                 _instance.Write();
             }
 
-            _instance.Read();
-            var columns = new List<(string Column1, string Column2)>();
+            _instance.ReadValueTuple();
 
-            const string column1 = "column1";
-            const string column2 = "column2";
+            var columns3 = new List<string[]>();
+            //var columns = new List<(string Column1, string Column2)>();
 
-            while (_instance.Read())
+            //const string column1 = "column1";
+            //const string column2 = "column2";
+
+            while (_instance.ReadValueTuple().Item1)
             {
-                columns.Add((column1, column2));
+                columns3.Add(_instance.ReadValueTuple().Item2);    
+                //columns.Add((column1, column2));
             }
 
-            Assert.That(columns.Count, Is.EqualTo(1000));
+            Assert.That(columns3.Count, Is.EqualTo(1000));
 
         }
     }

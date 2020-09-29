@@ -17,9 +17,9 @@ namespace Interview
         {
            _instance.Write();
         }
-        public bool Read()
+        public (bool, string[]) ReadValueTuple()
         {
-            return _instance.Read();
+            return _instance.ReadValueTuple();
         }
     }
 }

@@ -13,8 +13,21 @@ namespace Interview
             _readerStream = readerStream;
         }
 
+
+        public (bool, string[]) ReadValueTuple()
+        {
+            const char separator = '\t';
+            var line = ReadLine();
+            var columns = GetColumns(separator, line);
+            var flag = line != null && columns.Length != 0;
+
+            return (flag, columns);
+        }
+
         public bool Read()
         {
+
+
             const char separator = '\t';
 
             var line = ReadLine();
@@ -30,6 +43,42 @@ namespace Interview
             return true;
 
         }
+
+
+
+        //public bool Read(out string column1, out string column2)
+        //{
+        //    const int firstColumn = 0;
+        //    const int secondColumn = 1;
+
+        //    const char separator = '\t';
+
+        //    var line = ReadLine();
+
+        //    if (line == null)
+        //    {
+        //        column1 = null;
+        //        column2 = null;
+
+        //        return false;
+        //    }
+
+        //    var columns = GetColumns(line, separator);
+
+        //    if (columns.Length == 0)
+        //    {
+        //        column1 = null;
+        //        column2 = null;
+
+        //        return false;
+        //    }
+
+        //    column1 = columns[firstColumn];
+        //    column2 = columns[secondColumn];
+
+        //    return true;
+        //}
+
 
         private string ReadLine()
         {
@@ -48,5 +97,7 @@ namespace Interview
             columns.Add(line);
             return columns.ToArray();
         }
+
+   
     }
 }
