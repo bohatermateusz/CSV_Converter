@@ -17,9 +17,9 @@ namespace Interview
             const char separator = '\t';
             var line = ReadLine();
             var columns = GetColumns(separator, line);
-            var flag = line != null && columns.Length != 0;
+            var readColumn = line != null && columns.Length != 0;
 
-            return (flag, columns);
+            return (readColumn, columns);
         }
 
         private string ReadLine()
