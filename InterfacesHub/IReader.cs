@@ -2,7 +2,6 @@
 {
     public interface IReader
     {
-        bool Read();
-        (bool, string[]) ReadValueTuple();
+        (bool, string[]) Read();
     }
 }

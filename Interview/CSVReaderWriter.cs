@@ -11,13 +11,13 @@ namespace Interview
             _reader = reader;
             _writer = writer;
         }
-        internal void Write()
+        internal void Write(params string[] columns)
         {
-            _writer.Write();
+            _writer.Write(columns);
         }
-        internal (bool, string[]) ReadValueTuple()
+        internal (bool, string[]) Read()
         {
-            return _reader.ReadValueTuple();
+            return _reader.Read();
         }
     }
     

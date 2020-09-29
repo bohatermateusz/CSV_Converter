@@ -13,13 +13,13 @@ namespace Interview
             var readerStream = new StreamReader(File.Open(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite));
             _instance = new CsvReaderWriter(new CsvReader(readerStream), new CsvWriter(writerStream));
         }
-        public void Write()
+        public void Write(params string[] columns)
         {
-           _instance.Write();
+           _instance.Write(columns);
         }
-        public (bool, string[]) ReadValueTuple()
+        public (bool, string[]) Read()
         {
-            return _instance.ReadValueTuple();
+            return _instance.Read();
         }
     }
 }
